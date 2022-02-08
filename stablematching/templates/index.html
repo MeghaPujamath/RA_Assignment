@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            /* Create two equal columns that floats next to each other */
+            .column {
+              float: left;
+              width: 50%;
+              padding: 10px;
+              height: 300px; /* Should be removed. Only for demonstration */
+            }
+            
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            function call_counter(url, pk) {
+                window.open(url);
+                $.get('views/'+py+'/', function () {
+                    alert("counter updated!");
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <form method="GET">{% csrf_token %}
+            
+            <button type="Submit" name="my_btn" value="Compute" value="Click" class="btn btn-primary">Compu</button>
+            <input type="text" name="input_num" value="{{number}}"/>
+        </form>
+        <form method="POST">{% csrf_token %}
+            <h2>Two Equal Columns</h2>
+            <div class="row">
+            <div class="column" style="background-color:#aaa;">
+                <h2>Men Preference</h2>
+                <ul>
+                    {% for item1 in input_data_men %}
+                        <li>{{input_data_men.item1}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="column" style="background-color:#bbb;">
+                <h2>Women Preference</h2>
+                <ul>
+                    {% for item2 in input_data_women %}
+                        <li>{{item2}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            </div>
+            <div class="column">
+                <h2>Result</h2>
+                <ul>
+                    {% for item in data %}
+                        <li>{{item}}</li>
+                    {% endfor %}
+                </ul>
+
+                {{chart | safe}}
+            </div>
+            
+        </form>
+    </body>
+</html>
+
