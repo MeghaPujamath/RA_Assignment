@@ -8,3 +8,6 @@ The HTML page designed displays the bipartite graph of the result of the stable 
 
 1. The user can specify the number of couples using which the result is generated.
 2. The preferences are set each time randomly
+
+
+![](stableMatching.gif)
