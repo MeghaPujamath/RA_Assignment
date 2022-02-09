@@ -23,6 +23,8 @@ def index(request):
     preferred_rankings_women =[]
 
     n = request.GET.get('input_num')
+    if(n == None):
+        n = '1'
     men_list = get_input(n,'male')
     women_list = get_input(n,'female')
     preferred_rankings_men = get_random_preferance(men_list,women_list)
@@ -34,7 +36,7 @@ def index(request):
         for man in free_men:
             begin_matching(man)
 
-    image_bytes = plotgraph(tentative_engagements)
+    image_bytes = plotgraph(tentative_engagements,preferred_rankings_men,preferred_rankings_women)
     context = {
         "form" : my_form,
         "data" : tentative_engagements,
