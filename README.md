@@ -10,6 +10,6 @@ The HTML page designed displays the bipartite graph of the result of the stable 
 2. The preferences are set each time randomly
 
 
-<img src="stableMatching.gif" width="250" height="250"/>
+<img src="stableMatching.gif" width="500" height="500"/>
 
 <!-- ![](stableMatching.gif) -->
