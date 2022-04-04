@@ -1,6 +1,6 @@
 # Stable Matching Problem
 
-This project aims to visualize a very famous stable matching algorithm.
+This project aims to visualize a famous stable matching algorithm.
 
 Definition: The stable matching problem is the problem of finding a stable matching between two equally sized sets of elements given an ordering of preferences for each element
 
